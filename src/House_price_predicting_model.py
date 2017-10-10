@@ -23,12 +23,12 @@ def LinearRegression():
 	m 				= 	len(Y)
 	Y 				=	Y.reshape(m,1)
 	X 				= 	np.c_[np.ones(m),X] # Adding column of 1 of size m in X
-	theta			= 	np.zeros((6,1)) 	# initailzing theta value
-	learning_rate	= 	0.000000001
-	iterations		=	1000
+	theta				= 	np.zeros((6,1)) 	# initailzing theta value
+	learning_rate			= 	0.000000001
+	iterations			=	1000
 	J				=	CostFuction(X,Y,m,theta)
 	print " Testing Initial Value of Cost Function %f"%J
-	[theta,j_history]	=	Gradiant_descent(X,Y,theta,m,learning_rate,iterations)
+	[theta,j_history]		=	Gradiant_descent(X,Y,theta,m,learning_rate,iterations)
 	
 	#print j_history
 
