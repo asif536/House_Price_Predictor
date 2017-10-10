@@ -10,7 +10,7 @@ from function.input_data import InputData
 col_name    =   ["price","bedrooms","bathrooms","sqft_living","sqft_lot","floors"]
 data  		=	pd.read_csv('trian.csv',header=None,names=col_name).as_matrix()
 x   		=	data[:,3]
-y			=	data[:,0]
+y		=	data[:,0]
 
 # ploting the data of sqft_living vs price
   
