@@ -2,8 +2,7 @@ import numpy as np
 from cost import CostFuction
 
 
-# Calculating gradiant descent and minimize the value of theta
-
+# Calculating gradiant descent and minimize the CostFuction
 def Gradiant_descent(x,y,theta,m,learning_rate,num_iters):
 	j_history = np.zeros((num_iters,1))
 	j_history = j_history.reshape(num_iters,1)

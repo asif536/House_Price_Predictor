@@ -1,6 +1,5 @@
 import numpy as np
 
-
 # Compute the Cost function
 def CostFuction(X,Y,m,theta):
 	j=0.0
