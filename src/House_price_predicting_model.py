@@ -34,7 +34,8 @@ def LinearRegression():
 
 	#print theta
 
-	# Predicting price for input dataset
+	# Testing 
+	
 	test_data1	=	[1,4,4.5,5420,101930,1]
 	test_data1	= 	np.asarray(test_data1)
 	Predict1 	=	test_data1.dot(theta)
@@ -53,6 +54,8 @@ def LinearRegression():
 	print "Estimate Price of House is: $%f "%Predict3
 	print "Original Price : $530000 "
 
+	#Predicting price based on input
+	
 	Output          =  InputData(theta)
 	print "Estimate Price of House is: $%f"%Output
 
