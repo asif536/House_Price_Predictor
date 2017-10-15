@@ -19,13 +19,13 @@ plot_Data(x,y)
 # Main Function
 def LinearRegression():
 	X 				=	data[:,1:6]
-	Y 				=   data[:,0]
+	Y 				=       data[:,0]
 	m 				= 	len(Y)
 	Y 				=	Y.reshape(m,1)
 	X 				= 	np.c_[np.ones(m),X] # Adding column of 1 of size m in X
 	theta				= 	np.zeros((6,1)) 	# initailzing theta value
 	learning_rate			= 	0.000000001
-	iterations			=	1000
+	iterations			=	1200
 	J				=	CostFuction(X,Y,m,theta)
 	print " Testing Initial Value of Cost Function %f"%J
 	[theta,j_history]		=	Gradiant_descent(X,Y,theta,m,learning_rate,iterations)
