@@ -8,13 +8,8 @@ from function.input_data import InputData
 from function.feature_scaling import FeatureScaling
 
 # reading the data 
-<<<<<<< HEAD
-col_name    =   ["price","bedrooms","bathrooms","sqft_living","sqft_lot","floors","zipcode"]
+col_name    	=   	["price","bedrooms","bathrooms","sqft_living","sqft_lot","floors","zipcode"]
 data  		=	pd.read_csv('train.csv',header=None,names=col_name).as_matrix()
-=======
-col_name    	=   	["price","bedrooms","bathrooms","sqft_living","sqft_lot","floors"]
-data  		=	pd.read_csv('trian.csv',header=None,names=col_name).as_matrix()
->>>>>>> ee9c9a7a2223773b2bddca51af31700d830966de
 x   		=	data[:,3]
 y		=	data[:,0]
 
@@ -30,51 +25,36 @@ def LinearRegression():
 	m 				= 	len(Y)
 	Y 				=	Y.reshape(m,1)
 	X 				= 	np.c_[np.ones(m),X] # Adding column of 1 of size m in X
-	X 				=   FeatureScaling(X)
+	X 				=   	FeatureScaling(X)
 	print X[14],Y[14]
-	theta			= 	np.zeros((7,1)) 	# initailzing theta value
-	learning_rate	= 	0.1
-	iterations		=	1000
-=======
-	X 				=	data[:,1:6]
-	Y 				=       data[:,0]
-	m 				= 	len(Y)
-	Y 				=	Y.reshape(m,1)
-	X 				= 	np.c_[np.ones(m),X] # Adding column of 1 of size m in X
-	theta				= 	np.zeros((6,1)) 	# initailzing theta value
-	learning_rate			= 	0.000000001
-	iterations			=	1200
->>>>>>> ee9c9a7a2223773b2bddca51af31700d830966de
+	theta				= 	np.zeros((7,1)) 	# initailzing theta value
+	learning_rate			= 	0.1
 	J				=	CostFuction(X,Y,m,theta)
 	print " Testing Initial Value of Cost Function %f"%J
 	[theta,j_history]		=	Gradiant_descent(X,Y,theta,m,learning_rate,iterations)
 	
 	# trian cost function
-	J_train  			=  CostFuction(X,Y,m,theta)
+	J_train  			=  	CostFuction(X,Y,m,theta)
 
 	print " Testing Train Value of Cost Function %f"%J_train
 	#test Gradiant desent
 
-	test_data      		=	pd.read_csv("test.csv").as_matrix()
+	test_data      			=	pd.read_csv("test.csv").as_matrix()
 	x_test 				=	test_data[:,1:7]
-	y_test 				=   test_data[:,0]
-	m_test              =   len(y_test)
+	y_test 				=       test_data[:,0]
+	m_test              		=  	len(y_test)
 	x_test 				= 	np.c_[np.ones(m_test),x_test]
-	x_test              =   FeatureScaling(x_test)
+	x_test              		=   	FeatureScaling(x_test)
 	j_test				=	CostFuction(x_test,y_test,m_test,theta)
 	
 	print " Testing Test Value of Cost Function %f"%j_test
 
 	print theta
-
-<<<<<<< HEAD
+	
 	# Predicting price for input dataset
 	test_data1	=	[1,-0.38773777,0.24903439,-0.37208855,-0.21181928,1.11320682,-1.38888858]
-=======
 	# Testing 
 	
-	test_data1	=	[1,4,4.5,5420,101930,1]
->>>>>>> ee9c9a7a2223773b2bddca51af31700d830966de
 	test_data1	= 	np.asarray(test_data1)
 	Predict1 	=	test_data1.dot(theta)
 	print "Estimate Price of House is: $%f "%Predict1
