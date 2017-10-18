@@ -19,9 +19,8 @@ y		=	data[:,0]
 
 # Main Function
 def LinearRegression():
-<<<<<<< HEAD
 	X 				=	data[:,1:7]
-	Y 				=   data[:,0]
+	Y 				=       data[:,0]
 	m 				= 	len(Y)
 	Y 				=	Y.reshape(m,1)
 	X 				= 	np.c_[np.ones(m),X] # Adding column of 1 of size m in X
