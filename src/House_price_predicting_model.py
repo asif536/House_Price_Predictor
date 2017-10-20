@@ -8,7 +8,7 @@ from function.input_data import InputData
 from function.feature_scaling import FeatureScaling
 
 # reading the data 
-col_name    	=   	["price","bedrooms","bathrooms","sqft_living","sqft_lot","floors","zipcode"]
+col_name        =   ["price","bedrooms","bathrooms","sqft_living","sqft_lot","floors","zipcode"]
 data  		=	pd.read_csv('train.csv',header=None,names=col_name).as_matrix()
 x   		=	data[:,3]
 y		=	data[:,0]
@@ -20,40 +20,40 @@ y		=	data[:,0]
 # Main Function
 def LinearRegression():
 	X 				=	data[:,1:7]
-	Y 				=       data[:,0]
+	Y 				=   	data[:,0]
 	m 				= 	len(Y)
 	Y 				=	Y.reshape(m,1)
 	X 				= 	np.c_[np.ones(m),X] # Adding column of 1 of size m in X
 	X 				=   	FeatureScaling(X)
-	print X[14],Y[14]
 	theta				= 	np.zeros((7,1)) 	# initailzing theta value
 	learning_rate			= 	0.1
-	J				=	CostFuction(X,Y,m,theta)
+	iterations			=	900
+	lamda 				=   	10
+	J				=	CostFuction(X,Y,m,theta,lamda)
 	print " Testing Initial Value of Cost Function %f"%J
-	[theta,j_history]		=	Gradiant_descent(X,Y,theta,m,learning_rate,iterations)
+	[theta,j_history]		=	Gradiant_descent(X,Y,theta,m,learning_rate,iterations,lamda)
 	
 	# trian cost function
-	J_train  			=  	CostFuction(X,Y,m,theta)
+	J_train  			=  CostFuction(X,Y,m,theta,lamda)
 
 	print " Testing Train Value of Cost Function %f"%J_train
 	#test Gradiant desent
 
-	test_data      			=	pd.read_csv("test.csv").as_matrix()
-	x_test 				=	test_data[:,1:7]
-	y_test 				=       test_data[:,0]
-	m_test              		=  	len(y_test)
-	x_test 				= 	np.c_[np.ones(m_test),x_test]
-	x_test              		=   	FeatureScaling(x_test)
-	j_test				=	CostFuction(x_test,y_test,m_test,theta)
+	test_data      		=	pd.read_csv("test.csv").as_matrix()
+	x_test 			=	test_data[:,1:7]
+	y_test 			=   	test_data[:,0]
+	m_test             	=   	len(y_test)
+	x_test 			= 	np.c_[np.ones(m_test),x_test]
+	x_test              	=   	FeatureScaling(x_test)
+	j_test			=	CostFuction(x_test,y_test,m_test,theta,lamda)
 	
 	print " Testing Test Value of Cost Function %f"%j_test
 
 	print theta
-	
+
+
 	# Predicting price for input dataset
 	test_data1	=	[1,-0.38773777,0.24903439,-0.37208855,-0.21181928,1.11320682,-1.38888858]
-	# Testing 
-	
 	test_data1	= 	np.asarray(test_data1)
 	Predict1 	=	test_data1.dot(theta)
 	print "Estimate Price of House is: $%f "%Predict1
@@ -73,8 +73,8 @@ def LinearRegression():
 
 	#Predicting price based on input
 	
-	Output          =  InputData(theta)
-	print "Estimate Price of House is: $%f"%Output
+	#Output          =  InputData(theta)
+	#print "Estimate Price of House is: $%f"%Output
 
 
 
