@@ -7,7 +7,7 @@ By analysing the house prices that are previously sold.
 
  Processor         - Intel core i3 and Above
 
- Hard Disk Space   - 100MB
+ Hard Disk Space   - 100MB or More
 
 # Software Requirements
  OS - Windows/Linux/Mac
