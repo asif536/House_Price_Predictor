@@ -10,8 +10,10 @@ def Gradiant_descent(x,y,theta,m,learning_rate,num_iters,lamda):
 		hypothysis		=	x.dot(theta)
 		diff			=	(hypothysis-y)
 		gradiant 		=	(x.T).dot(diff)/m
-		theta			=	theta*(1-((learning_rate*lamda)/m))-(learning_rate*gradiant)
-		j_history[i]		=	CostFuction(x,y,m,theta,lamda)
+		for i in range(1,7):
+			theta[i]	=  	theta[i]*(1-((learning_rate*lamda)/m))
+		theta			=	theta-(learning_rate*gradiant)
+		j_history[i]	=	CostFuction(x,y,m,theta,lamda)
 		print j_history[i]
 	return [theta,j_history]
 
