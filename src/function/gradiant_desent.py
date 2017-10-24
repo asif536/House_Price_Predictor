@@ -14,6 +14,6 @@ def Gradiant_descent(x,y,theta,m,learning_rate,num_iters,lamda):
 			theta[i]	=  	theta[i]*(1-((learning_rate*lamda)/m))
 		theta			=	theta-(learning_rate*gradiant)
 		j_history[i]	=	CostFuction(x,y,m,theta,lamda)
-		print j_history[i]
+		#print j_history[i]
 	return [theta,j_history]
 
