@@ -1,6 +1,7 @@
 # Washington House Predictor Model
 This is the Machine Learning Programme that predict the housing price of WashingtonDC 
-By analysing the house prices that are previously sold.
+By analysing the house prices that are previously sold ,it make used of Linear regrations 
+by gradient descent algorithm. 
 
 # Hardware Requirements
  Ram               - 1GB And Above
