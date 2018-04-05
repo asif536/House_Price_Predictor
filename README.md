@@ -13,7 +13,7 @@ by gradient descent algorithm.
  
  Matplotlib
 # To Run
-Make sure that you have install above Library
+Make sure that you have install above Libraries
 
 Extract zip file in your computer
 
