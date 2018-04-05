@@ -13,7 +13,7 @@ by gradient descent algorithm.
  
  Matplotlib
 # To Run
-Make sure that you have install all dependency 
+Make sure that you have install above Library
 
 Extract zip file in your computer
 
@@ -26,7 +26,7 @@ Example
 ```
 cd ~/House_Price_Predictor/src
 ```
-Type
+To run type this command
 
 ```
 python House_price_predicting_model.py
