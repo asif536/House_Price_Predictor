@@ -1,6 +1,6 @@
 # Washington House Predictor Model
 This is the Machine Learning Programme that predict the housing price of WashingtonDC 
-By analysing the house prices that are previously sold ,it make used of Linear regrations 
+By analysing the house prices that are previously sold ,it make used of Linear regression 
 by gradient descent algorithm. 
 
 # Programming Language
